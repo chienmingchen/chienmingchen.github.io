@@ -177,7 +177,7 @@ var data17=[
 		
 var data18=[		
 	{"label":  "Nature & Ecology" , "value": 9 },
-	{"label":  "History" , "value": 112 },
+	{"label":  "History" , "value": 32},
 	{"label":  "Mathematics" , "value": 1 },
 	{"label":  "Agricultural Sciences" , "value": 2 },
 	{"label":  "Essays & Commentary" , "value": 6 }];	
@@ -257,13 +257,13 @@ var data31=[
 
 var data32=[
 	{"label":  "Model Trains" , "value": 7 },
-		{"label":  "Quilts & Quilting" , "value": 12 },
-		{"label":  "Knitting" , "value": 9 },	
-		{"label":  "Woodworking" , "value": 13 },
+	{"label":  "Quilts & Quilting" , "value": 12 },
+	{"label":  "Knitting" , "value": 9 },	
+	{"label":  "Woodworking" , "value": 13 },
 	{"label":  "Remote Control Vehicles" , "value": 7 },
-		{"label":  "Models" , "value": 3 },
+	{"label":  "Models" , "value": 3 },
 	{"label":  "Pottery & Ceramics" , "value": 2 },
-		{"label":  "Needlecrafts" , "value": 8 }];
+	{"label":  "Needlecrafts" , "value": 8 }];
 
 var data33=[		
 	{"label":  "Food & Wine" , "value": 98 }];
@@ -340,6 +340,8 @@ var data42=[
 	{"label":  "Bridal & Weddings" , "value": 8 },
 	{"label":  "Pregnancy & Childbirth" , "value": 1 },
 	{"label":  "Self-Improvement" , "value": 2 }];
+
+var oldData = '.data1';
 
 var data43=[
 	{"label":  "Parenting" , "value": 9 },
@@ -454,7 +456,6 @@ d3.json("data.json", function(error, d) {
   d.y0 = 0;
   update(root = d);
   collapseAll(root = d);
-  //mypie(root = d)
 });
 
 
@@ -579,9 +580,183 @@ function click(d) {
   lastClickD = d;
   update(d);
   console.log(d);
-  //mypie(d);
-  change(data2);
-  //renderPieChart(data2,"body div.right",colorScheme);
+  
+  switch (d.name) {
+  case "Magazine Subscriptions":
+    change(data1);
+	oldData = '.data1'
+    break;
+  case "Automotive & Motorcycles":
+    change(data2);
+	oldData = '.data2'
+    break;
+  case "Professional & Educational Journals":
+    change(data3);
+	oldData = '.data3'
+    break;
+  case "Professional & Trade":
+    change(data4);
+	oldData = '.data4'
+    break;
+  case "Art":
+    change(data5);
+	oldData = '.data5'
+    break;
+  case "Drawing":
+    change(data6);
+	oldData = '.data6'
+    break;
+  case "Law":
+    change(data7);
+	oldData = '.data7'
+    break;
+  case "Entertainment & Media":
+    change(data8);
+	oldData = '.data8'
+    break;
+  case "Medicine":
+    change(data9);
+	oldData = '.data9'
+    break;
+  case "Humanities & Social Sciences":
+    change(data10);
+	oldData = '.data10'
+    break;
+  case "Science & Technology":
+    change(data11);
+	oldData = '.data11'
+    break;
+  case "Education":
+    change(data12);
+	oldData = '.data12'
+    break;
+  case "Technology":
+    change(data13);
+	oldData = '.data13'
+    break;
+  case "Literary":
+    change(data14);
+	oldData = '.data14'
+    break;
+  case "Sci-Fi & Mystery":
+    change(data15);
+	oldData = '.data15'
+    break;
+  case "Science Fiction & Fantasy":
+    change(data16);
+	oldData = '.data16'
+    break;
+  case "Science":
+    change(data17);
+	oldData = '.data17'
+    break;
+  case "History & Nature":
+    change(data18);
+	oldData = '.data18'
+    break;
+  case "Health":
+    change(data19);
+	oldData = '.data19'
+    break;
+  case "Fitness & Wellness":
+    change(data20);
+	oldData = '.data20'
+    break;
+  case "Travel":
+    change(data21);
+	oldData = '.data21'
+    break;
+  case "City & Regional":
+    change(data22);
+	oldData = '.data22'
+    break;
+  case "United States":
+    change(data23);
+	oldData = '.data23'
+    break;
+  case "News & Political Commentary":
+    change(data24);
+	oldData = '.data24'
+    break;
+  case "Children & Teen":
+    change(data25);
+	oldData = '.data25'
+    break;
+  case "Children":
+    change(data26);
+	oldData = '.data26'
+    break;
+  case "By Age":
+    change(data27);
+	oldData = '.data27'
+    break;
+  case "Arts":
+    change(data28);
+	oldData = '.data28'
+    break;
+  case "Music & Photography":
+    change(data29);
+	oldData = '.data29'
+    break;
+  case "Religion & Spirituality":
+    change(data30);
+	oldData = '.data30'
+    break;
+  case "Business & Investing":
+    change(data31);
+	oldData = '.data31'
+    break;
+  case "Crafts & Hobbies":
+    change(data32);
+	oldData = '.data32'
+    break;
+  case "Cooking":
+    change(data33);
+	oldData = '.data33'
+    break;
+  case "Food & Wine":
+    change(data34);
+	oldData = '.data34'
+    break;
+  case "Lifestyle & Cultures":
+    change(data35);
+	oldData = '.data35'
+    break;
+  case "Fashion & Style":
+    change(data36);
+	oldData = '.data36'
+    break;
+  case "Sports":
+    change(data37);
+	oldData = '.data37'
+    break;
+  case "Recreation & Outdoors":
+    change(data38);
+	oldData = '.data38'
+    break;
+  case "Sports & Leisure":
+    change(data39);
+	oldData = '.data39'
+    break;
+  case "Home & Garden":
+    change(data40);
+	oldData = '.data40'
+    break;
+  case "Entertainment & Pop Culture":
+    change(data41);
+	oldData = '.data41'
+    break;
+  case "Women's Interest":
+    change(data42);
+	oldData = '.data42'
+    break;
+  case "Parenting & Families":
+    change(data43);
+	oldData = '.data43'
+    break;
+  default:
+	break;
+}
 }
 
 function color(d) {
@@ -604,11 +779,11 @@ function collapseAll(){
 }
 	
 	
-function change(data, old){
+function change(data){
 
 //selectAll('.oldData').data(newData)，該進入 update 狀態的資料就會取代掉舊的，接著再呼叫 selectAll().exit().remove() 移除掉其他不再 newData 內的資料，最後呼叫 selectAll().enter().append() 
 
-path = svg.selectAll('.data1')
+path = svg.selectAll(oldData)
 	.data(pie(data))
 	.enter()
 	.append('path')

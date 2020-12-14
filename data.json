@@ -23,7 +23,7 @@
 			"size": 856, 
 			"children": [
 				{
-				"name": "Arts",
+				"name": "Art",
 				"children": [
 					{"name":  "Crafts & Collectibles"},
 					{"name":  "Performing Arts"},
@@ -42,7 +42,6 @@
 				{
 				"name": "Law",
 				"children": [
-					{"name": "_"},
 					{"name": "International Law & Relations"},
 					{"name": "Government & Policy"}
 				]
@@ -52,7 +51,6 @@
 				{
 				"name": "Entertainment & Media",
 				"children": [
-					{"name": "_"},
 					{"name":  "Music"}
 				]				
 				},
@@ -60,7 +58,6 @@
 				"name": "Medicine",
 				"size": 30,
 				"children": [ 
-					{"name": "_"}, 
 					{"name": "Alternative & Holistic"}, 
 					{"name": "Nursing"} 
 				]
@@ -84,7 +81,6 @@
 				{
 				"name": "Science & Technology",
 				"children": [
-					{"name": "_"},
 					{"name":  "Biological & Natural Sciences"},
 					{"name":  "Astronomy"},
 					{"name":  "Computer Science & Mathematics"},
@@ -96,7 +92,6 @@
 				{
 				"name": "Education",
 				"children": [
-					{"name": "_"},
 					{"name":  "History of Education"},
 					{"name":  "Theory & Practice"}
 				]
@@ -255,7 +250,6 @@
 		{
 		"name": "Business & Investing",
 		"children": [
-			{"name": "_"},
 			{"name":  "Banking"},
 			{"name":  "International"},
 			{"name":  "Business Management"},
@@ -304,7 +298,7 @@
 		{
 		"name": "Lifestyle & Cultures",
 		"children": [
-			{"name": "_"},  
+			{"name": "Othres"},  
 			{"name": "Gay & Lesbian"}
 		]
 		},
@@ -408,7 +402,6 @@
 		{
 		"name": "Parenting & Families",
 		"children": [
-			{"name": "_"},
 			{"name":  "Parenting"},
 			{"name":  "Education"}
 		]
