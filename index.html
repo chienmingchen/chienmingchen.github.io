@@ -62,6 +62,289 @@ rect.disabled {                                                 /* NEW */
     <script>
 
 
+var	data1 = [
+	{"label":  "Automotive & Motorcycles" , "value": 68 },
+	{"label":  "Professional & Educational Journals" , "value": 865 },
+	{"label":  "Technology" , "value": 46 },
+	{"label":  "Sports" , "value": 355 },
+	{"label":  "Cooking" , "value": 98 },
+	{"label":  "Lifestyle & Cultures" , "value": 72 },
+	{"label":  "Golf" , "value": 13 },
+	{"label":  "Business & Investing" , "value": 74 },
+	{"label":  "Literary" , "value": 58 },
+	{"label":  "Science" , "value": 50 },
+	{"label":  "Health" , "value": 149 },
+	{"label":  "Travel" , "value": 281 },
+	{"label":  "News & Political Commentary" , "value": 35 },
+	{"label":  "Children & Teen" , "value": 101 },
+	{"label":  "Arts" , "value": 195 },
+	{"label":  "Fashion & Style" , "value": 148 },
+	{"label":  "Home & Garden" , "value": 135 },
+	{"label":  "Newsletters" , "value": 6 },
+	{"label":  "Pets & Animals" , "value": 31 },
+	{"label":  "Women's Interest" , "value": 22 },
+	{"label":  "Men's Interest" , "value": 13 },
+	{"label":  "Entertainment & Pop Culture" , "value": 134 },
+	{"label":  "Parenting & Families" , "value": 17 },
+	{"label":  "Crafts & Hobbies" , "value": 70 },
+	{"label":  "Newspapers" , "value": 8 },
+	{"label":  "Spanish-Language" , "value": 2 },
+	{"label":  "Religion & Spirituality" , "value": 109 }];
+	
+var	data2 = [
+	{"label":  "Trucks" , "value": 6 },
+	{"label":  "Motorcycles" , "value": 3 },
+	{"label":  "Automotive" , "value": 46 }];
+	
+var	data3 = [
+	{"label":  "Large Print" , "value": 1 },
+	{"label":  "Professional & Trade" , "value": 856 }];
+	
+var	data4 = [
+	{"label":  "Arts" , "value": 195 },
+	{"label":  "Law" , "value": 16 },
+	{"label":  "Engineering" , "value": 58 },
+	{"label":  "Firefighting & Prevention" , "value": 1 },
+	{"label":  "Entertainment & Media" , "value": 45 },
+	{"label":  "Medicine" , "value": 30 },
+	{"label":  "Humanities & Social Sciences" , "value": 279 },
+	{"label":  "Science & Technology" , "value": 74 },
+	{"label":  "Education" , "value": 34 },
+	{"label":  "Transportation" , "value": 91 }];
+
+var	data5 = [
+	{"label":  "Crafts & Collectibles" , "value": 29 },
+	{"label":  "Performing Arts" , "value": 12 },
+	{"label":  "Architecture" , "value": 35 },
+	{"label":  "Painting" , "value": 9 },
+	{"label":  "Drawing" , "value": 24 },
+	{"label":  "Decorative Arts" , "value": 24 },	
+	{"label":  "Photography" , "value": 45 }];
+			
+var	data6 = [
+	{"label":  "Design & Illustration" , "value": 24 }];
+	
+var	data7= [
+	{"label":  "International" , "value": 21 },
+	{"label":  "Government & Policy" , "value": 4 }];
+
+var	data8= [
+	{"label":  "Music" , "value": 83 }];
+	
+var	data9= [
+	{"label":  "Alternative & Holistic" , "value": 3 },	
+	{"label":  "Nursing" , "value": 2 }];	
+		
+var	data10=[	
+	{"label":  "History" , "value": 112 },	
+	{"label":  "Geography" , "value": 3 },
+	{"label":  "Philosophy" , "value": 2 },	
+	{"label":  "Economics & Economic Theory" , "value": 38 },
+	{"label":  "Linguistics" , "value": 29 },
+	{"label":  "Political Science" , "value": 4 },
+	{"label":  "Military Science" , "value": 21 },
+	{"label":  "Psychology" , "value": 4 },	
+	{"label":  "Sociology" , "value": 8 }];
+	
+var	data11=[	
+	{"label":  "Biological & Natural Sciences" , "value": 38 },
+	{"label":  "Astronomy" , "value": 9 },
+	{"label":  "Computer Science & Mathematics" , "value": 5 },
+	{"label":  "Physics" , "value": 1 },
+	{"label":  "Earth Sciences" , "value": 4 }];
+
+var data12=[
+	{"label":  "History of Education" , "value": 4 },
+	{"label":  "Theory & Practice" , "value": 8 }];
+	
+var data13=[	
+	{"label":  "Electronics" , "value": 5 },
+	{"label":  "Computers & Internet" , "value": 31 }];
+		
+var data14=[
+	{"label":  "Sci-Fi & Mystery" , "value": 58 }];
+	
+var data15=[	
+	{"label":  "Science Fiction & Fantasy" , "value": 23 },
+	{"label":  "Literary Magazines & Journals" , "value": 35 }];
+	
+var data16=[
+	{"label":  "Fantasy" , "value": 10 },
+	{"label":  "Science Fiction" , "value": 10 }];
+	
+var data17=[
+	{"label":  "History & Nature" , "value": 50 }];
+		
+var data18=[		
+	{"label":  "Nature & Ecology" , "value": 9 },
+	{"label":  "History" , "value": 112 },
+	{"label":  "Mathematics" , "value": 1 },
+	{"label":  "Agricultural Sciences" , "value": 2 },
+	{"label":  "Essays & Commentary" , "value": 6 }];	
+	
+var data19=[
+	{"label":  "Fitness & Wellness" , "value": 149 }];
+
+var data20=[
+	{"label":  "Nutrition" , "value": 2 },
+	{"label":  "Health" , "value": 33 },
+	{"label":  "Women" , "value": 77 },
+	{"label":  "Men" , "value": 21 }];	
+		
+var data21=[
+	{"label":  "City & Regional" , "value": 281 }];
+	
+var data22=[
+	{"label":  "Others" , "value": 37 },
+	{"label":  "United States" , "value": 244 }];
+
+var data23=[
+	{"label":  "Northeast" , "value": 47 },
+	{"label":  "West" , "value": 62 },
+	{"label":  "South" , "value": 87 },
+	{"label":  "Midwest" , "value": 36 }];
+	
+var data24=[
+	{"label":  "Ideas & Commentary" , "value": 25 },
+	{"label":  "Regional" , "value": 6 }];
+	
+var data25=[
+	{"label":  "Teen" , "value": 8 },
+	{"label":  "Children" , "value": 86 }];
+	
+var data26=[
+	{"label":  "Animals" , "value": 1 },
+	{"label":  "Girls" , "value": 3 },
+	{"label":  "Sports & Activities" , "value": 3 },
+	{"label":  "By Age" , "value": 75 },
+	{"label":  "Educational" , "value": 3 }];
+	
+var data27=[
+	{"label":  "Baby-3" , "value": 4 },
+	{"label":  "Ages 4-8" , "value": 15 },
+	{"label":  "Ages 9-12" , "value": 51 },
+	{"label":  "12 & Up" , "value": 5 }];
+
+
+var data28=[
+	{"label":  "Music & Photography" , "value": 195 }];
+	
+var data29=[
+	{"label":  "Architecture" , "value": 31 },
+	{"label":  "Music" , "value": 83 },
+	{"label":  "Photography" , "value": 39 },
+	{"label":  "Art & Art History" , "value": 12 },
+	{"label":  "Graphic Design" , "value": 4 }];
+	
+var data30=[
+	{"label":  "Hinduism" , "value": 2 },
+	{"label":  "Occult" , "value": 2 },
+	{"label":  "Christianity" , "value": 31 },
+	{"label":  "Other Eastern Religions" , "value": 2 },
+	{"label":  "Judaism" , "value": 2 },
+	{"label":  "Buddhism" , "value": 3 }];
+	
+var data31=[
+	{"label":  "Banking" , "value": 2 },
+	{"label":  "International" , "value": 21 },
+	{"label":  "Business Management" , "value": 9 },
+	{"label":  "Advertising" , "value": 7 },
+	{"label":  "Careers" , "value": 1 },
+	{"label":  "Entrepreneurship" , "value": 12 },
+	{"label":  "Business Life" , "value": 3 },
+	{"label":  "Investing" , "value": 4 },
+	{"label":  "Finance" , "value": 14 }];	
+
+var data32=[
+	{"label":  "Model Trains" , "value": 7 },
+		{"label":  "Quilts & Quilting" , "value": 12 },
+		{"label":  "Knitting" , "value": 9 },	
+		{"label":  "Woodworking" , "value": 13 },
+	{"label":  "Remote Control Vehicles" , "value": 7 },
+		{"label":  "Models" , "value": 3 },
+	{"label":  "Pottery & Ceramics" , "value": 2 },
+		{"label":  "Needlecrafts" , "value": 8 }];
+
+var data33=[		
+	{"label":  "Food & Wine" , "value": 98 }];
+
+var data34=[
+	{"label":  "Recipes & Techniques" , "value": 38 },
+	{"label":  "Special Diet" , "value": 17 },
+	{"label":  "Reference" , "value": 5 },
+	{"label":  "Wine & Cocktails" , "value": 14 }];
+
+
+var data35=[
+	{"label":  "Others" , "value": 68 },
+	{"label":  "Gay & Lesbian" , "value": 4 }];
+	
+var data36=[
+	{"label":  "Beauty" , "value": 12 },
+	{"label":  "International" , "value": 21 },
+	{"label":  "Women" , "value": 77 },
+	{"label":  "Men" , "value": 21 }];	
+	
+var data37=[
+	{"label":  "Recreation & Outdoors" , "value": 355 }];
+	
+var data38=[
+	{"label":  "Sports & Leisure" , "value": 344 },
+	{"label":  "Outdoors & Nature" , "value": 7 }];
+	
+var data39=[
+	{"label":  "Hunting & Firearms" , "value": 66 },
+	{"label":  "Hiking & Camping" , "value": 12 },
+	{"label":  "Skiing & Snowboarding" , "value": 15 },
+	{"label":  "Flying" , "value": 28 },
+	{"label":  "Water Sports" , "value": 15 },
+	{"label":  "Extreme Sports" , "value": 22 },
+	{"label":  "Running" , "value": 8 },
+	{"label":  "Baseball" , "value": 7 },
+	{"label":  "Soccer" , "value": 1 },
+	{"label":  "Basketball" , "value": 6 },
+	{"label":  "Football" , "value": 5 },
+	{"label":  "Training" , "value": 24 },
+	{"label":  "Boating" , "value": 32 },
+	{"label":  "Mountaineering" , "value": 2 },
+	{"label":  "Hockey" , "value": 3 },
+	{"label":  "Racket Sports" , "value": 1 },
+	{"label":  "Individual Sports" , "value": 13 },
+	{"label":  "Cycling" , "value": 6 },
+	{"label":  "Equestrian" , "value": 27 },
+	{"label":  "Rodeos" , "value": 1 }];
+
+var data40=[
+	{"label":  "Log Homes" , "value": 2 },
+	{"label":  "Interior Design" , "value": 2 },
+	{"label":  "Country Life" , "value": 3 },
+	{"label":  "Home Design" , "value": 10 },
+	{"label":  "Antiques & Collectibles" , "value": 31 },	
+	{"label":  "Gardening & Horticulture" , "value": 19 },	
+	{"label":  "Design & Decoration" , "value": 39 },
+	{"label":  "How-to & Home Improvements" , "value": 9 },
+	{"label":  "Farming" , "value": 2 }];
+
+var data41=[
+	{"label":  "Pop Culture" , "value": 12 },
+	{"label":  "Video Games" , "value": 2 },
+	{"label":  "Humor" , "value": 2 },	
+	{"label":  "Movies" , "value": 23 },
+	{"label":  "Television" , "value": 6 },
+	{"label":  "Puzzles & Games" , "value": 27 },
+	{"label":  "Tabloids" , "value": 4 },
+	{"label":  "Celebrities & Gossip" , "value": 17 }];
+	
+var data42=[
+	{"label":  "Women's Lifestyle" , "value": 4 },
+	{"label":  "Bridal & Weddings" , "value": 8 },
+	{"label":  "Pregnancy & Childbirth" , "value": 1 },
+	{"label":  "Self-Improvement" , "value": 2 }];
+
+var data43=[
+	{"label":  "Parenting" , "value": 9 },
+	{"label":  "Education" , "value": 34 }];
+
 var margin = {top: 30, right: 20, bottom: 30, left: 20},
     width = 960 - margin.left - margin.right,
     barHeight = 20,
@@ -82,271 +365,89 @@ var svg1 = d3.select("body div.left").append("svg")
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 	
-//var svg2 = d3.select("body div.right").append("svg")
-//    .attr("width", width + margin.left + margin.right)
-//  .append("g")
-//    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-    var w = 300,                        //width
-    h = 300,                            //height
-    r = 100,                            //radius
-	/*
-    data1 = [{"label":"one", "value":20}, 
-            {"label":"two", "value":50}, 
-            {"label":"three", "value":30}];
-	*/
-	
-	data = [
-	{"label":  "Automotive & Motorcycles" , "value": 68 },
-	{"label":  "Professional & Educational Journals" , "value": 865 },
-	{"label":  "Technology" , "value": 46 },
-	{"label":  "Sports" , "value": 355 },
-	{"label":  "Cooking" , "value": 98 },
-	{"label":  "Golf" , "value": 13 },
-	{"label":  "Business & Investing" , "value": 74 },
-	{"label":  "Health" , "value": 33 },
-	{"label":  "Literary" , "value": 58 },
-	{"label":  "Science" , "value": 50 },
-	{"label":  "Health" , "value": 49 },
-	{"label":  "Travel" , "value": 281 },
-	{"label":  "News & Political Commentary" , "value": 35 },
-	{"label":  "Children & Teen" , "value": 101 },
-	{"label":  "Arts" , "value": 108 },
-	{"label":  "Religion & Spirituality" , "value": 109 }];
-	
-	data2 = [
-	{"label":  "Trucks" , "value": 6 },
-	{"label":  "Motorcycles" , "value": 3 },
-	{"label":  "Automotive" , "value": 46 }];
-	
-	data3 = [
-	{"label":  "Large Print" , "value": 1 },
-	{"label":  "Professional & Trade" , "value": 856 }];
-	
-	data4 = [
-	{"label":  "Arts" , "value": 195 },
-	{"label":  "Law" , "value": 16 },
-	{"label":  "Engineering" , "value": 58 },
-	{"label":  "Firefighting & Prevention" , "value": 1 },
-	{"label":  "Entertainment & Media" , "value": 45 },
-	{"label":  "Medicine" , "value": 30 },
-	{"label":  "Humanities & Social Sciences" , "value": 279 },
-	{"label":  "Science & Technology" , "value": 74 },
-	{"label":  "Education" , "value": 34 },
-	{"label":  "Transportation" , "value": 91 }];
+var colorScheme = ["#E57373","#BA68C8","#7986CB","#A1887F","#90A4AE","#AED581","#9575CD","#FF8A65","#4DB6AC","#FFF176","#64B5F6","#00E676"];
+	//renderPieChart(data1,"body div.right",colorScheme);
+		
+var margin2 = {top:50,bottom:50,left:50,right:50};
+var width2 = 350 - margin2.left - margin2.right,
+height = width2,
+radius = Math.min(width, height) / 2;
+var donutWidth = 75;
+var legendRectSize = 18;
+var legendSpacing = 4;
 
-	data5 = [
-	{"label":  "Crafts & Collectibles" , "value": 29 },
-	{"label":  "Performing Arts" , "value": 12 },
-	{"label":  "Architecture" , "value": 35 },
-	{"label":  "Painting" , "value": 9 },
-	{"label":  "Drawing" , "value": 24 },
-	{"label":  "Decorative Arts" , "value": 24 },	
-	{"label":  "Photography" , "value": 45 }];
-			
-	data6 = [
-	
-	{"label":  "Economics & Economic Theory" , "value": 38 },
-	
-	{"label":  "Music & Photography" , "value": 108 },
-	{"label":  "Music" , "value": 83 },
-	{"label":  "Fashion & Style" , "value": 148 },
-	{"label":  "Women" , "value": 77 },
-	
-	{"label":  "Recreation & Outdoors" , "value": 355 },
-	{"label":  "Sports & Leisure" , "value": 344 },
-	{"label":  "Flying" , "value": 28 },
+data1.forEach(function(item){
+	item.enabled = true;
+});
 
-	{"label":  "Computers & Internet" , "value": 31 },
-	
-	{"label":  "Food & Wine" , "value": 98 },
-	{"label":  "Recipes & Techniques" , "value": 38 },
+var color2 = d3.scale.ordinal()
+	.range(colorScheme);
 
-	{"label":  "Art & Art History" , "value": 12 },
-	{"label":  "Hunting & Firearms" , "value": 66 },
-	{"label":  "Home & Garden" , "value": 135 },
-	{"label":  "Design & Decoration" , "value": 39 },
+var svg = d3.select("body div.right")
+	.append("svg")
+	.attr("width", width2)
+	.attr("height", height)
+	.append("g")
+	.attr("transform", "translate(" + width2 / 2 + "," + height / 2 + ")");
 
-	{"label":  "City & Regional" , "value": 281 },
-	{"label":  "Pets & Animals" , "value": 31 },
-	
-	
+var arc = d3.svg.arc()
+	.outerRadius(radius - 10)
+	.innerRadius(radius - donutWidth);
 
-	{"label":  "Ideas & Commentary" , "value": 25 },
-	{"label":  "United States" , "value": 244 },
-	{"label":  "West" , "value": 62 },
+var pie = d3.layout.pie()
+	.sort(null)
+	.value(function(d) { return d.value; });
+
+var tooltip = d3.select("body div.right")
+	.append('div')
+	.attr('class', 'tooltip');
+
+tooltip.append('div')
+	.attr('class', 'label');
+
+tooltip.append('div')
+	.attr('class', 'count');
+
+tooltip.append('div')
+	.attr('class', 'percent');
+
+var path = svg.selectAll('path')
+	.data(pie(data1))
+	.enter()
+	.append('path')
+	.attr('d', arc)
+	.attr('fill', function(d, i) {
+		return color2(d.data.label);
+	})
+	.each(function(d) { this._current = d; });
 
 
+path.on('mouseover', function(d) {
+	var total = d3.sum(data1.map(function(d) {
+		return (d.enabled) ? d.value : 0;
+	}));
 
-	{"label":  "Christianity" , "value": 31 },
-	{"label":  "History" , "value": 112 },
+var percent = Math.round(1000 * d.data.value / total) / 10;
+tooltip.select('.label').html(d.data.label.toUpperCase()).style('color','black');
+tooltip.select('.count').html(d.data.value);
+tooltip.select('.percent').html(percent + '%');
 
-	{"label":  "History & Nature" , "value": 50 },
-	{"label":  "Nature & Ecology" , "value": 9 },
-	{"label":  "Hiking & Camping" , "value": 12 },
-	{"label":  "Men" , "value": 21 },
-	{"label":  "Skiing & Snowboarding" , "value": 15 },
+tooltip.style('display', 'block');
+tooltip.style('opacity',2);
 
-	{"label":  "Fitness & Wellness" , "value": 49 },
-	
-	{"label":  "Entrepreneurship" , "value": 12 },
-	{"label":  "How-to & Home Improvements" , "value": 9 },
-	{"label":  "Entertainment & Pop Culture" , "value": 134 },
-	{"label":  "Movies" , "value": 23 },
-	{"label":  "Training" , "value": 24 },
-
-	
-	{"label":  "South" , "value": 87 },
-	{"label":  "Antiques & Collectibles" , "value": 31 },
-	{"label":  "Beauty" , "value": 12 },
-	{"label":  "Northeast" , "value": 47 },
-	{"label":  "Essays & Commentary" , "value": 6 },
-	{"label":  "Water Sports" , "value": 15 },
-	{"label":  "Business Management" , "value": 9 },
-	{"label":  "Finance" , "value": 14 },
-	{"label":  "Special Diet" , "value": 17 },
-
-	{"label":  "Extreme Sports" , "value": 22 },
-	{"label":  "Midwest" , "value": 36 },
-	{"label":  "Running" , "value": 8 },
-	{"label":  "Electronics" , "value": 5 },
-	{"label":  "Psychology" , "value": 4 },
-	{"label":  "Political Science" , "value": 4 },
-	{"label":  "Parenting & Families" , "value": 17 },
-	{"label":  "Others", "value": 502 },
-	{"label":  "Parenting" , "value": 9 },
-
-	{"label":  "Women's Interest" , "value": 22 },
-	{"label":  "Bridal & Weddings" , "value": 8 },
-	{"label":  "Crafts & Hobbies" , "value": 70 },
-	{"label":  "Woodworking" , "value": 13 },
-	{"label":  "Remote Control Vehicles" , "value": 7 },
-	{"label":  "Investing" , "value": 4 },
-
-	{"label":  "Sci-Fi & Mystery" , "value": 58 },
-	{"label":  "Science Fiction & Fantasy" , "value": 23 },
-	{"label":  "Science Fiction" , "value": 10 },
-	{"label":  "Literary Magazines & Journals" , "value": 35 },
-	{"label":  "Celebrities & Gossip" , "value": 17 },
+});
 
 
+path.on('mousemove', function(d) {
+	tooltip.style('top', (d3.event.layerY + 10) + 'px')
+	.style('left', (d3.event.layerX - 25) + 'px');
+});
 
-	{"label":  "Children" , "value": 86 },
-	{"label":  "By Age" , "value": 75 },
-	{"label":  "Ages 4-8" , "value": 15 },
-	{"label":  "Men's Interest" , "value": 13 },
-	{"label":  "Equestrian" , "value": 27 },
-	{"label":  "Boating" , "value": 32 },
-	{"label":  "Teen" , "value": 8 },
-	{"label":  "Television" , "value": 6 },
-	{"label":  "Ages 9-12" , "value": 51 },
-	{"label":  "Fantasy" , "value": 10 },
-	{"label":  "Gardening & Horticulture" , "value": 19 },
-	{"label":  "Nutrition" , "value": 2 },
-	{"label":  "International" , "value": 21 },
-	{"label":  "Pop Culture" , "value": 12 },
-	{"label":  "Business Life" , "value": 3 },
-	{"label":  "Home Design" , "value": 10 },
-	{"label":  "Wine & Cocktails" , "value": 14 },
-	{"label":  "Puzzles & Games" , "value": 27 },
-	{"label":  "Quilts & Quilting" , "value": 12 },
-	{"label":  "Pottery & Ceramics" , "value": 2 },
-	{"label":  "Needlecrafts" , "value": 8 },
-
-	{"label":  "Newsletters" , "value": 6 },
-	{"label":  "Linguistics" , "value": 29 },
-
-	{"label":  "Baby-3" , "value": 4 },
-
-
-	{"label":  "Military Science" , "value": 21 },
-	{"label":  "Theory & Practice" , "value": 8 },
-	{"label":  "Individual Sports" , "value": 13 },
-
-	{"label":  "Design & Illustration" , "value": 24 },
-	{"label":  "History of Education" , "value": 4 },
-	{"label":  "Nursing" , "value": 2 },
-	{"label":  "Sociology" , "value": 8 },
-	{"label":  "Biological & Natural Sciences" , "value": 38 },
-	{"label":  "12 & Up" , "value": 5 },
-	{"label":  "Earth Sciences" , "value": 4 },
-	{"label":  "Reference" , "value": 5 },
-	{"label":  "Baseball" , "value": 7 },
-
-	{"label":  "Advertising" , "value": 7 },
-	{"label":  "Regional" , "value": 6 },
-	{"label":  "Women's Lifestyle" , "value": 4 },
-	{"label":  "Cycling" , "value": 6 },
-	{"label":  "Knitting" , "value": 9 },
-	{"label":  "Tabloids" , "value": 4 },
-
-
-	{"label":  "Judaism" , "value": 2 },
-	{"label":  "Sports & Activities" , "value": 3 },
-	{"label":  "Buddhism" , "value": 3 },
-	{"label":  "Newspapers" , "value": 8 },
-	{"label":  "Astronomy" , "value": 9 },
-	{"label":  "International Law & Relations" , "value": 2 },
-	{"label":  "Government & Policy" , "value": 4 },
-	{"label":  "Geography" , "value": 3 },
-	{"label":  "Computer Science & Mathematics" , "value": 5 },
-	{"label":  "Hinduism" , "value": 2 },
-	{"label":  "Occult" , "value": 2 },
-	{"label":  "Lifestyle & Cultures" , "value": 72 },
-	{"label":  "Basketball" , "value": 6 },
-	{"label":  "Graphic Design" , "value": 4 },
-	{"label":  "Model Trains" , "value": 7 },
-	{"label":  "Philosophy" , "value": 2 },
-	{"label":  "Football" , "value": 5 },
-	{"label":  "Gay & Lesbian" , "value": 4 },
-	{"label":  "Self-Improvement" , "value": 2 },
-	{"label":  "Mountaineering" , "value": 2 },
-	{"label":  "Log Homes" , "value": 2 },
-	{"label":  "Educational" , "value": 3 },
-	{"label":  "Hockey" , "value": 3 },
-	{"label":  "Alternative & Holistic" , "value": 3 },
-	{"label":  "Other Eastern Religions" , "value": 2 },
-	{"label":  "Banking" , "value": 2 },
-
-	{"label":  "Farming" , "value": 2 },
-	{"label":  "Careers" , "value": 1 },
-	{"label":  "Physics" , "value": 1 },
-	{"label":  "Models" , "value": 3 },
-	{"label":  "Video Games" , "value": 2 },
-	{"label":  "Rodeos" , "value": 1 },
-	{"label":  "Pregnancy & Childbirth" , "value": 1 },
-
-	{"label":  "Outdoors & Nature" , "value": 7 },
-	{"label":  "Humor" , "value": 2 },
-
-	{"label":  "Racket Sports" , "value": 1 },
-	{"label":  "Spanish-Language" , "value": 2 },
-	{"label":  "Interior Design" , "value": 2 },
-	{"label":  "Country Life" , "value": 3 },
-	{"label":  "Girls" , "value": 3 },
-	{"label":  "Mathematics" , "value": 1 },
-	{"label":  "Animals" , "value": 1 },
-	{"label":  "Agricultural Sciences" , "value": 2 },
-	{"label":  "Soccer" , "value": 1 }];
-	
-	var colorScheme = ["#E57373","#BA68C8","#7986CB","#A1887F","#90A4AE","#AED581","#9575CD","#FF8A65","#4DB6AC","#FFF176","#64B5F6","#00E676"];
-    renderPieChart(data,"body div.right",colorScheme);
-	
-	/*
-    var vis = d3.select("body div.right")
-        .append("svg")              //create the SVG element inside the <body>
-        .data([data1])                   //associate our data with the document
-            .attr("width", w)           //set the width and height of our visualization (these will be attributes of the <svg> tag
-            .attr("height", h)
-        .append("g")                //make a group to hold our pie chart
-            .attr("transform", "translate(" + r + "," + r + ")")    //move the center of the pie chart from 0, 0 to radius, radius
-
-    var arc = d3.svg.arc()              //this will create <path> elements for us using arc data
-        .outerRadius(r);
-
-    var pie = d3.layout.pie()           //this will create arc data for us given a list of values
-        .value(function(d) { return d.value; });    //we must tell it out to access the value of each element in our data array
-	*/	
+path.on('mouseout', function() {
+	tooltip.style('display', 'none');
+	tooltip.style('opacity',0);
+});
 
 d3.json("data.json", function(error, d) {
   d.x0 = 0;
@@ -356,41 +457,6 @@ d3.json("data.json", function(error, d) {
   //mypie(root = d)
 });
 
-
-function mypie(source){  
-
-	var color = d3.scale.category20c();     //builtin range of colors
-
-    var arcs = vis.selectAll("g.slice")     //this selects all <g> elements with class slice (there aren't any yet)
-        .data(pie)                          //associate the generated pie data (an array of arcs, each having startAngle, endAngle and value properties) 
-        .enter()                            //this will create <g> elements for every "extra" data element that should be associated with a selection. The result is creating a <g> for every object in the data array
-        .append("svg:g")                //create a group to hold each slice (we will have a <path> and a <text> element associated with each slice)
-        .attr("class", "slice");    //allow us to style things in the slices (like text)
-
-    arcs.append("svg:path")
-        .attr("fill", function(d, i) { return color(i); } ) //set the color for each slice to be chosen from the color function defined above
-        .attr("d", arc);                                    //this creates the actual SVG path using the associated data (pie) with the arc drawing function
-
-    arcs.append("svg:text")                                     //add a label to each slice
-        .attr("transform", function(d) {                    //set the label's origin to the center of the arc
-        //we have to make sure to set these before calling arc.centroid
-        d.innerRadius = 0;
-        d.outerRadius = r;
-        return "translate(" + arc.centroid(d) + ")";        //this gives us a pair of coordinates like [50, 50]
-        //var c = arc.centroid(d),
-        //x = c[0],
-        //y = c[1],
-        // pythagorean theorem for hypotenuse
-        //h = Math.sqrt(x*x + y*y);
-		//return "translate(" + (x/h * labelr) +  ',' + (y/h * labelr) +  ")"; 
-		})
-        .attr("text-anchor", "middle")                          //center the text on it's origin
-        //.attr("text-anchor", function(d) {
-		// are we past the center?
-		//return (d.endAngle + d.startAngle)/2 > Math.PI ? "end" : "start";
-		//})
-		.text(function(d, i) { return data[i].value; });      //get the label from our original data array
-}
 
 function update(source) {
 
@@ -514,6 +580,8 @@ function click(d) {
   update(d);
   console.log(d);
   //mypie(d);
+  change(data2);
+  //renderPieChart(data2,"body div.right",colorScheme);
 }
 
 function color(d) {
@@ -534,149 +602,51 @@ function collapseAll(){
     root.children.forEach(collapse);
     update(root);
 }
+	
+	
+function change(data, old){
 
-function renderPieChart (dataset,dom_element_to_append_to, colorScheme){
+//selectAll('.oldData').data(newData)，該進入 update 狀態的資料就會取代掉舊的，接著再呼叫 selectAll().exit().remove() 移除掉其他不再 newData 內的資料，最後呼叫 selectAll().enter().append() 
 
-	var margin = {top:50,bottom:50,left:50,right:50};
-	var width = 400 - margin.left - margin.right,
-	height = width,
-	radius = Math.min(width, height) / 2;
-	var donutWidth = 100;
-	var legendRectSize = 18;
-	var legendSpacing = 4;
+path = svg.selectAll('.data1')
+	.data(pie(data))
+	.enter()
+	.append('path')
+	.attr('d', arc)
+	.attr('fill', function(d, i) {
+		return color2(d.data.label);
+	})
+	.each(function(d) { this._current = d; });
+	
+path.on('mouseover', function(d) {
+	var total = d3.sum(data.map(function(d) {
+		//return (d.enabled) ? d.value : 0;
+		return d.value;
+	}));
 
-	dataset.forEach(function(item){
-		item.enabled = true;
-	});
+percent = Math.round(1000 * d.data.value / total) / 10;
+tooltip.select('.label').html(d.data.label.toUpperCase()).style('color','black');
+tooltip.select('.count').html(d.data.value);
+tooltip.select('.percent').html(percent + '%');
 
-		var color = d3.scale.ordinal()
-		.range(colorScheme);
+tooltip.style('display', 'block');
+tooltip.style('opacity',2);
 
-		var svg = d3.select(dom_element_to_append_to)
-		.append("svg")
-		.attr("width", width)
-		.attr("height", height)
-		.append("g")
-		.attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
-
-		var arc = d3.svg.arc()
-		.outerRadius(radius - 10)
-		.innerRadius(radius - donutWidth);
-
-		var pie = d3.layout.pie()
-		.sort(null)
-		.value(function(d) { return d.value; });
-
-		var tooltip = d3.select(dom_element_to_append_to)
-		.append('div')
-		.attr('class', 'tooltip');
+});
 
 
-		tooltip.append('div')
-		.attr('class', 'label');
+path.on('mousemove', function(d) {
+	tooltip.style('top', (d3.event.layerY + 10) + 'px')
+	.style('left', (d3.event.layerX - 25) + 'px');
+});
 
-		tooltip.append('div')
-		.attr('class', 'count');
+path.on('mouseout', function() {
+	tooltip.style('display', 'none');
+	tooltip.style('opacity',0);
+});
 
-		tooltip.append('div')
-		.attr('class', 'percent');
-
-		var path = svg.selectAll('path')
-		.data(pie(dataset))
-		.enter()
-		.append('path')
-		.attr('d', arc)
-		.attr('fill', function(d, i) {
-			return color(d.data.label);
-		})
-		.each(function(d) { this._current = d; });
-
-
-		path.on('mouseover', function(d) {
-			var total = d3.sum(dataset.map(function(d) {
-				return (d.enabled) ? d.value : 0;
-			}));
-
-			var percent = Math.round(1000 * d.data.value / total) / 10;
-			tooltip.select('.label').html(d.data.label.toUpperCase()).style('color','black');
-			tooltip.select('.count').html(d.data.value);
-			tooltip.select('.percent').html(percent + '%');
-
-			tooltip.style('display', 'block');
-			tooltip.style('opacity',2);
-
-		});
-
-
-		path.on('mousemove', function(d) {
-			tooltip.style('top', (d3.event.layerY + 10) + 'px')
-			.style('left', (d3.event.layerX - 25) + 'px');
-		});
-
-		path.on('mouseout', function() {
-			tooltip.style('display', 'none');
-			tooltip.style('opacity',0);
-		});
-
-		var legend = svg.selectAll('.legend')
-		.data(color.domain())
-		.enter()
-		.append('g')
-		.attr('class', 'legend')
-		.attr('transform', function(d, i) {
-			var height = legendRectSize + legendSpacing;
-			var offset =  height * color.domain().length / 2;
-			var horz = -2 * legendRectSize;
-			var vert = i * height - offset;
-			return 'translate(' + horz + ',' + vert + ')';
-		});
-		/*
-		legend.append('rect')
-		.attr('width', legendRectSize)
-		.attr('height', legendRectSize)
-		.style('fill', color)
-		.style('stroke', color)
-		.on('click', function(label) {
-			var rect = d3.select(this);
-			var enabled = true;
-			var totalEnabled = d3.sum(dataset.map(function(d) {
-				return (d.enabled) ? 1 : 0;
-			}));
-
-			if (rect.attr('class') === 'disabled') {
-				rect.attr('class', '');
-			} else {
-				if (totalEnabled < 2) return;
-				rect.attr('class', 'disabled');
-				enabled = false;
-			}
-
-			pie.value(function(d) {
-				if (d.label === label) d.enabled = enabled;
-				return (d.enabled) ? d.value : 0;
-			});
-
-			path = path.data(pie(dataset));
-
-			path.transition()
-			.duration(750)
-			.attrTween('d', function(d) {
-				var interpolate = d3.interpolate(this._current, d);
-				this._current = interpolate(0);
-				return function(t) {
-					return arc(interpolate(t));
-				};
-			});
-		});
-
-		
-		legend.append('text')
-		.attr('x', legendRectSize + legendSpacing)
-		.attr('y', legendRectSize - legendSpacing)
-		.text(function(d) { return d; })
-		*/
-	};
-
+};
+	
     </script>
   </body>
 

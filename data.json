@@ -73,8 +73,7 @@
 					{"name": "Geography"}, 
 					{"name": "Philosophy"}, 
 					{"name": "Economics & Economic Theory", "size": 38}, 
-					{"name": "Linguistics"}, 
-					{"name": "Religion & Spirituality"}, 
+					{"name": "Linguistics"},
 					{"name": "Political Science"}, 
 					{"name": "Military Science"}, 
 					{"name": "Psychology"}, 
@@ -142,12 +141,10 @@
 			{
 			"name": "History & Nature",
 			"children": [
-				{"name":  "Astronomy"},
 				{"name":  "Nature & Ecology"},
 				{"name":  "History"},
 				{"name":  "Mathematics"},
 				{"name":  "Agricultural Sciences"},
-				{"name":  "Technology"},
 				{"name":  "Essays & Commentary"}
 			]
 			}
@@ -175,7 +172,7 @@
 			{
 			"name": "City & Regional",
 			"children": [
-				{"name": "_"},
+				{"name": "others"},
 				{
 				"name": "United States",
 				"children": [
@@ -415,8 +412,6 @@
 			{"name":  "Parenting"},
 			{"name":  "Education"}
 		]
-		},
-		
-		{"name": "Others"}
+		}
 ]
 }	
