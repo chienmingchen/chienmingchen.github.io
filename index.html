@@ -105,15 +105,15 @@ rect.disabled {                                                 /* NEW */
   </head>
 
   <body>
+
 	<div class="left" style="width:50%;float:left;"></div>
 	<div class="right" style="position: absolute;left:800px;float:right;">
-	<p> num of magzines in different sub-categories</p>
+
 	</div>
 	<div class="last" style="position: absolute;left:600px;float:right;top:300px"></div>
     <script src="https://d3js.org/d3.v3.min.js"></script>
 	<script src="https://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
     <script>
-
 
 var	data1 = [
 	{"label":  "Automotive & Motorcycles" , "value": 68, "rank": 1352},
@@ -514,31 +514,6 @@ var margin3 = {top: 70, right: 20, bottom: 70, left: 40},
     width3 = 600 - margin3.left - margin3.right,
     height3 = 400 - margin3.top - margin3.bottom;
 
-/*
-// append the svg object to the body of the page
-var svg = d3.select("body div.last")
-  .append("svg")
-    .attr("width", width3 + margin3.left + margin3.right)
-    .attr("height", height3 + margin3.top + margin3.bottom)
-  .append("g")
-    .attr("transform",
-          "translate(" + margin3.left + "," + margin3.top + ")");
-
-// Initialize the X axis
-var x = d3.scaleBand()
-  .range([ 0, width3 ])
-  .padding(0.2);
-var xAxis = svg.append("g")
-  .attr("transform", "translate(0," + height3 + ")")
-
-// Initialize the Y axis
-var y = d3.scaleLinear()
-  .range([ height3, 0]);
-var yAxis = svg.append("g")
-  .attr("class", "myYaxis")
-  
-test(data1)
-*/
 
 // set the ranges
 var x = d3.scale.ordinal().rangeRoundBands([0, width3], .05);
@@ -574,12 +549,6 @@ var svg3 = d3.select("body div.last").append("svg")
 
 svg3.call(tip);
 
-// load the data
-
-    //data.forEach(function(d) {
-    //    d.Letter = d.Letter;
-     //   d.Freq = +d.Freq;
-    //});
 	dataset.sort(function(a, b) {
         return a.rank - b.rank;
       });
@@ -746,6 +715,9 @@ function update(source) {
 // Toggle children on click.
 var lastClickD = null;
 function click(d) {
+
+  d3.selectAll("g > *").remove();
+   
   if (d.children) {
     d._children = d.children;
     d.children = null;
@@ -764,176 +736,217 @@ function click(d) {
   switch (d.name) {
   case "Magazine Subscriptions":
     change(data1);
-	//renew(data1);
+	renew(data1);
 	oldData = '.data1'
     break;
   case "Automotive & Motorcycles":
     change(data2);
-	//renew(data2);
+	renew(data2);
 	oldData = '.data2'
     break;
   case "Professional & Educational Journals":
     change(data3);
+	renew(data3);
 	oldData = '.data3'
     break;
   case "Professional & Trade":
     change(data4);
+	renew(data4);
 	oldData = '.data4'
     break;
   case "Art":
     change(data5);
+	renew(data5);
 	oldData = '.data5'
     break;
   case "Drawing":
     change(data6);
+	renew(data6);
 	oldData = '.data6'
     break;
   case "Law":
     change(data7);
+	renew(data7);
 	oldData = '.data7'
     break;
   case "Entertainment & Media":
     change(data8);
+	renew(data8);
 	oldData = '.data8'
     break;
   case "Medicine":
     change(data9);
+	renew(data9);
 	oldData = '.data9'
     break;
   case "Humanities & Social Sciences":
     change(data10);
+	renew(data10);
 	oldData = '.data10'
     break;
   case "Science & Technology":
     change(data11);
+	renew(data11);
 	oldData = '.data11'
     break;
   case "Education":
     change(data12);
+	renew(data12);
 	oldData = '.data12'
     break;
   case "Technology":
     change(data13);
+	renew(data13);
 	oldData = '.data13'
     break;
   case "Literary":
     change(data14);
+	renew(data14);
 	oldData = '.data14'
     break;
   case "Sci-Fi & Mystery":
     change(data15);
+	renew(data15);
 	oldData = '.data15'
     break;
   case "Science Fiction & Fantasy":
     change(data16);
+	renew(data16);
 	oldData = '.data16'
     break;
   case "Science":
     change(data17);
+	renew(data17);
 	oldData = '.data17'
     break;
   case "History & Nature":
     change(data18);
+	renew(data18);
 	oldData = '.data18'
     break;
   case "Health":
     change(data19);
+	renew(data19);
 	oldData = '.data19'
     break;
   case "Fitness & Wellness":
     change(data20);
+	renew(data20);
 	oldData = '.data20'
     break;
   case "Travel":
     change(data21);
+	renew(data21);
 	oldData = '.data21'
     break;
   case "City & Regional":
     change(data22);
+	renew(data22);
 	oldData = '.data22'
     break;
   case "United States":
     change(data23);
+	renew(data23);
 	oldData = '.data23'
     break;
   case "News & Political Commentary":
     change(data24);
+	renew(data24);
 	oldData = '.data24'
     break;
   case "Children & Teen":
     change(data25);
+	renew(data25);
 	oldData = '.data25'
     break;
   case "Children":
     change(data26);
+	renew(data26);
 	oldData = '.data26'
     break;
   case "By Age":
     change(data27);
+	renew(data27);
 	oldData = '.data27'
     break;
   case "Arts":
     change(data28);
+	renew(data28);
 	oldData = '.data28'
     break;
   case "Music & Photography":
     change(data29);
+	renew(data29);
 	oldData = '.data29'
     break;
   case "Religion & Spirituality":
     change(data30);
+	renew(data30);
 	oldData = '.data30'
     break;
   case "Business & Investing":
     change(data31);
+	renew(data31);
 	oldData = '.data31'
     break;
   case "Crafts & Hobbies":
     change(data32);
+	renew(data32);
 	oldData = '.data32'
     break;
   case "Cooking":
     change(data33);
+	renew(data33);
 	oldData = '.data33'
     break;
   case "Food & Wine":
     change(data34);
+	renew(data34);
 	oldData = '.data34'
     break;
   case "Lifestyle & Cultures":
     change(data35);
+	renew(data35);
 	oldData = '.data35'
     break;
   case "Fashion & Style":
     change(data36);
+	renew(data36);
 	oldData = '.data36'
     break;
   case "Sports":
     change(data37);
+	renew(data37);
 	oldData = '.data37'
     break;
   case "Recreation & Outdoors":
     change(data38);
+	renew(data38);
 	oldData = '.data38'
     break;
   case "Sports & Leisure":
     change(data39);
+	renew(data39);
 	oldData = '.data39'
     break;
   case "Home & Garden":
     change(data40);
+	renew(data40);
 	oldData = '.data40'
     break;
   case "Entertainment & Pop Culture":
     change(data41);
+	renew(data41);
 	oldData = '.data41'
     break;
   case "Women's Interest":
     change(data42);
+	renew(data42);
 	oldData = '.data42'
     break;
   case "Parenting & Families":
     change(data43);
+	renew(data43);
 	oldData = '.data43'
     break;
   default:
@@ -1010,16 +1023,29 @@ path.on('mouseout', function() {
 
 function renew(data){
 	  
-   data.sort(function(a, b) {
-        return a.value - b.value;
-      });
+	data.sort(function(a, b) {
+        return a.rank - b.rank;
+     });
+   x = d3.scale.ordinal().rangeRoundBands([0, width3], .05);
+
+   y = d3.scale.linear().range([height3, 0]);
+
+
+// define the axis
+    xAxis = d3.svg.axis()
+    .scale(x)
+    .orient("bottom")
+
+
+    yAxis = d3.svg.axis()
+    .scale(y)
+    .orient("left")
+    .ticks(10);
+	
+	// scale the range of the data
+	x.domain(data.map(function(d) { return d.label; }));
+	y.domain([0, d3.max(data, function(d) { return d.rank;})]);
 	  
-  svg3.selectAll(".bar").remove().exit();
-	  
-  // scale the range of the data
-  x.domain(data.map(function(d) { return d.label; }));
-  y.domain([0, d3.max(data, function(d) { return d.rank;})]);
-  
   
   // add axis
   svg3.append("g")
@@ -1042,9 +1068,9 @@ function renew(data){
       .style("text-anchor", "end")
       .text("avg rank");
 
-	  
+  	  
   // Add bar chart
-  svg3.selectAll(".data1")
+  svg3.selectAll("bar")
       .data(data)
 	  .enter().append("rect")
       .attr("class", "bar")
@@ -1054,6 +1080,7 @@ function renew(data){
       .attr("height", function(d) { return height3 - y(d.rank); })
 	  .on('mouseover', tip.show)
       .on('mouseout', tip.hide);
+  
 };
 
 // A function that create / update the plot for a given variable:
