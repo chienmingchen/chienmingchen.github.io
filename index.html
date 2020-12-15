@@ -169,7 +169,7 @@ var	data5 = [
 	{"label":  "Performing Arts" , "value": 12, "rank": 1108},
 	{"label":  "Architecture" , "value": 35, "rank": 1516},
 	{"label":  "Painting" , "value": 9, "rank": 1192},
-	{"label":  "Drawing" , "value": 24, "rank": 0},
+	{"label":  "Drawing" , "value": 24, "rank": 1763},
 	{"label":  "Decorative Arts" , "value": 24, "rank": 1404},	
 	{"label":  "Photography" , "value": 45, "rank": 2249}];
 			
@@ -262,13 +262,13 @@ var data24=[
 	
 var data25=[
 	{"label":  "Teen" , "value": 8, "rank": 442},
-	{"label":  "Children" , "value": 86, "rank": 0}];
+	{"label":  "Children" , "value": 86, "rank": 1289}];
 	
 var data26=[
 	{"label":  "Animals" , "value": 1, "rank": 166},
 	{"label":  "Girls" , "value": 3, "rank": 431},
 	{"label":  "Sports & Activities" , "value": 3, "rank": 1817},
-	{"label":  "By Age" , "value": 75, "rank": 0},
+	{"label":  "By Age" , "value": 75, "rank": 1337},
 	{"label":  "Educational" , "value": 3, "rank": 1644}];
 	
 var data27=[
@@ -279,7 +279,7 @@ var data27=[
 
 
 var data28=[
-	{"label":  "Music & Photography" , "value": 195, "rank": 0}];
+	{"label":  "Music & Photography" , "value": 195, "rank": 1649}];
 	
 var data29=[
 	{"label":  "Architecture" , "value": 31, "rank": 1516},
@@ -715,8 +715,6 @@ function update(source) {
 // Toggle children on click.
 var lastClickD = null;
 function click(d) {
-
-  d3.selectAll("g > *").remove();
    
   if (d.children) {
     d._children = d.children;
@@ -730,221 +728,266 @@ function click(d) {
   }
   d._isSelected = true;
   lastClickD = d;
-  update(d);
+
   console.log(d);
   
   switch (d.name) {
   case "Magazine Subscriptions":
+	d3.selectAll("g > *").remove();
     change(data1);
 	renew(data1);
 	oldData = '.data1'
     break;
   case "Automotive & Motorcycles":
+  d3.selectAll("g > *").remove();
     change(data2);
 	renew(data2);
 	oldData = '.data2'
     break;
   case "Professional & Educational Journals":
+  d3.selectAll("g > *").remove();
     change(data3);
 	renew(data3);
 	oldData = '.data3'
     break;
   case "Professional & Trade":
+  d3.selectAll("g > *").remove();
     change(data4);
 	renew(data4);
 	oldData = '.data4'
     break;
   case "Art":
+  d3.selectAll("g > *").remove();
     change(data5);
 	renew(data5);
 	oldData = '.data5'
     break;
   case "Drawing":
+  d3.selectAll("g > *").remove();
     change(data6);
 	renew(data6);
 	oldData = '.data6'
     break;
   case "Law":
+  d3.selectAll("g > *").remove();
     change(data7);
 	renew(data7);
 	oldData = '.data7'
     break;
   case "Entertainment & Media":
+  d3.selectAll("g > *").remove();
     change(data8);
 	renew(data8);
 	oldData = '.data8'
     break;
   case "Medicine":
+  d3.selectAll("g > *").remove();
     change(data9);
 	renew(data9);
 	oldData = '.data9'
     break;
   case "Humanities & Social Sciences":
+  d3.selectAll("g > *").remove();
     change(data10);
 	renew(data10);
 	oldData = '.data10'
     break;
   case "Science & Technology":
+  d3.selectAll("g > *").remove();
     change(data11);
 	renew(data11);
 	oldData = '.data11'
     break;
   case "Education":
+  d3.selectAll("g > *").remove();
     change(data12);
 	renew(data12);
 	oldData = '.data12'
     break;
   case "Technology":
+  d3.selectAll("g > *").remove();
     change(data13);
 	renew(data13);
 	oldData = '.data13'
     break;
   case "Literary":
+  d3.selectAll("g > *").remove();
+  d3.selectAll("g > *").remove();
     change(data14);
 	renew(data14);
 	oldData = '.data14'
     break;
   case "Sci-Fi & Mystery":
+  d3.selectAll("g > *").remove();
+  d3.selectAll("g > *").remove();
     change(data15);
 	renew(data15);
 	oldData = '.data15'
     break;
   case "Science Fiction & Fantasy":
+  d3.selectAll("g > *").remove();
     change(data16);
 	renew(data16);
 	oldData = '.data16'
     break;
   case "Science":
+  d3.selectAll("g > *").remove();
     change(data17);
 	renew(data17);
 	oldData = '.data17'
     break;
   case "History & Nature":
+  d3.selectAll("g > *").remove();
     change(data18);
 	renew(data18);
 	oldData = '.data18'
     break;
   case "Health":
+  d3.selectAll("g > *").remove();
     change(data19);
 	renew(data19);
 	oldData = '.data19'
     break;
   case "Fitness & Wellness":
+  d3.selectAll("g > *").remove();
     change(data20);
 	renew(data20);
 	oldData = '.data20'
     break;
   case "Travel":
+  d3.selectAll("g > *").remove();
     change(data21);
 	renew(data21);
 	oldData = '.data21'
     break;
   case "City & Regional":
+  d3.selectAll("g > *").remove();
     change(data22);
 	renew(data22);
 	oldData = '.data22'
     break;
   case "United States":
+  d3.selectAll("g > *").remove();
     change(data23);
 	renew(data23);
 	oldData = '.data23'
     break;
   case "News & Political Commentary":
+  d3.selectAll("g > *").remove();
     change(data24);
 	renew(data24);
 	oldData = '.data24'
     break;
   case "Children & Teen":
+  d3.selectAll("g > *").remove();
     change(data25);
 	renew(data25);
 	oldData = '.data25'
     break;
   case "Children":
+  d3.selectAll("g > *").remove();
     change(data26);
 	renew(data26);
 	oldData = '.data26'
     break;
   case "By Age":
+  d3.selectAll("g > *").remove();
     change(data27);
 	renew(data27);
 	oldData = '.data27'
     break;
   case "Arts":
+  d3.selectAll("g > *").remove();
     change(data28);
 	renew(data28);
 	oldData = '.data28'
     break;
   case "Music & Photography":
+  d3.selectAll("g > *").remove();
     change(data29);
 	renew(data29);
 	oldData = '.data29'
     break;
   case "Religion & Spirituality":
+  d3.selectAll("g > *").remove();
     change(data30);
 	renew(data30);
 	oldData = '.data30'
     break;
   case "Business & Investing":
+  d3.selectAll("g > *").remove();
     change(data31);
 	renew(data31);
 	oldData = '.data31'
     break;
   case "Crafts & Hobbies":
+  d3.selectAll("g > *").remove();
     change(data32);
 	renew(data32);
 	oldData = '.data32'
     break;
   case "Cooking":
+  d3.selectAll("g > *").remove();
     change(data33);
 	renew(data33);
 	oldData = '.data33'
     break;
   case "Food & Wine":
+  d3.selectAll("g > *").remove();
     change(data34);
 	renew(data34);
 	oldData = '.data34'
     break;
   case "Lifestyle & Cultures":
+  d3.selectAll("g > *").remove();
     change(data35);
 	renew(data35);
 	oldData = '.data35'
     break;
   case "Fashion & Style":
+  d3.selectAll("g > *").remove();
     change(data36);
 	renew(data36);
 	oldData = '.data36'
     break;
   case "Sports":
+  d3.selectAll("g > *").remove();
     change(data37);
 	renew(data37);
 	oldData = '.data37'
     break;
   case "Recreation & Outdoors":
+  d3.selectAll("g > *").remove();
     change(data38);
 	renew(data38);
 	oldData = '.data38'
     break;
   case "Sports & Leisure":
+  d3.selectAll("g > *").remove();
     change(data39);
 	renew(data39);
 	oldData = '.data39'
     break;
   case "Home & Garden":
+  d3.selectAll("g > *").remove();
     change(data40);
 	renew(data40);
 	oldData = '.data40'
     break;
   case "Entertainment & Pop Culture":
+  d3.selectAll("g > *").remove();
     change(data41);
 	renew(data41);
 	oldData = '.data41'
     break;
   case "Women's Interest":
+  d3.selectAll("g > *").remove();
     change(data42);
 	renew(data42);
 	oldData = '.data42'
     break;
   case "Parenting & Families":
+  d3.selectAll("g > *").remove();
     change(data43);
 	renew(data43);
 	oldData = '.data43'
@@ -952,6 +995,7 @@ function click(d) {
   default:
 	break;
 }
+  update(d);
 }
 
 function color(d) {
