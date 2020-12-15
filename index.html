@@ -49,304 +49,358 @@ rect {
 rect.disabled {                                                 /* NEW */
 	fill: transparent !important;                                 /* NEW */
 }  
- 
 }
+
+.bar{
+    fill: steelblue;
+  }
+
+.bar:hover{
+    fill: brown;
+  }
+
+.axis {
+	  font: 10px sans-serif;
+	}
+
+.axis path,
+.axis line {
+	  fill: none;
+	  stroke: #000;
+	  shape-rendering: crispEdges;
+}
+
+.d3-tip {
+  line-height: 1;
+  font-weight: bold;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 2px;
+}
+
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+  box-sizing: border-box;
+  display: inline;
+  font-size: 10px;
+  width: 100%;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.8);
+  content: "\25BC";
+  position: absolute;
+  text-align: center;
+}
+
+/* Style northward tooltips differently */
+.d3-tip.n:after {
+  margin: -1px 0 0 0;
+  top: 100%;
+  left: 0;
+}
+
+	
 
     </style>
   </head>
 
   <body>
 	<div class="left" style="width:50%;float:left;"></div>
-	<div class="right" style="width:50%;float:right;"></div>
+	<div class="right" style="position: absolute;left:800px;float:right;">
+	<p> num of magzines in different sub-categories</p>
+	</div>
+	<div class="last" style="position: absolute;left:600px;float:right;top:300px"></div>
     <script src="https://d3js.org/d3.v3.min.js"></script>
+	<script src="https://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
     <script>
 
 
 var	data1 = [
-	{"label":  "Automotive & Motorcycles" , "value": 68 },
-	{"label":  "Professional & Educational Journals" , "value": 865 },
-	{"label":  "Technology" , "value": 46 },
-	{"label":  "Sports" , "value": 355 },
-	{"label":  "Cooking" , "value": 98 },
-	{"label":  "Lifestyle & Cultures" , "value": 72 },
-	{"label":  "Golf" , "value": 13 },
-	{"label":  "Business & Investing" , "value": 74 },
-	{"label":  "Literary" , "value": 58 },
-	{"label":  "Science" , "value": 50 },
-	{"label":  "Health" , "value": 149 },
-	{"label":  "Travel" , "value": 281 },
-	{"label":  "News & Political Commentary" , "value": 35 },
-	{"label":  "Children & Teen" , "value": 101 },
-	{"label":  "Arts" , "value": 195 },
-	{"label":  "Fashion & Style" , "value": 148 },
-	{"label":  "Home & Garden" , "value": 135 },
-	{"label":  "Newsletters" , "value": 6 },
-	{"label":  "Pets & Animals" , "value": 31 },
-	{"label":  "Women's Interest" , "value": 22 },
-	{"label":  "Men's Interest" , "value": 13 },
-	{"label":  "Entertainment & Pop Culture" , "value": 134 },
-	{"label":  "Parenting & Families" , "value": 17 },
-	{"label":  "Crafts & Hobbies" , "value": 70 },
-	{"label":  "Newspapers" , "value": 8 },
-	{"label":  "Spanish-Language" , "value": 2 },
-	{"label":  "Religion & Spirituality" , "value": 109 }];
+	{"label":  "Automotive & Motorcycles" , "value": 68, "rank": 1352},
+	{"label":  "Professional & Educational Journals" , "value": 865, "rank": 1658},
+	{"label":  "Technology" , "value": 46, "rank": 2303},
+	{"label":  "Sports" , "value": 355, "rank": 1202},
+	{"label":  "Cooking" , "value": 98, "rank": 1088},
+	{"label":  "Lifestyle & Cultures" , "value": 72, "rank": 1614},
+	{"label":  "Business & Investing" , "value": 74, "rank": 2678},
+	{"label":  "Literary" , "value": 58, "rank": 1035},
+	{"label":  "Science" , "value": 50, "rank": 1313},
+	{"label":  "Health" , "value": 149, "rank": 1233},
+	{"label":  "Travel" , "value": 281, "rank": 903},
+	{"label":  "News & Political Commentary" , "value": 35, "rank": 1455},
+	{"label":  "Children & Teen" , "value": 101, "rank": 2206},
+	{"label":  "Arts" , "value": 195, "rank": 1226},
+	{"label":  "Fashion & Style" , "value": 148, "rank": 1958},
+	{"label":  "Home & Garden" , "value": 135, "rank": 1190},
+	{"label":  "Newsletters" , "value": 6, "rank": 579},
+	{"label":  "Pets & Animals" , "value": 31, "rank": 1172},
+	{"label":  "Women's Interest" , "value": 22, "rank": 984},
+	{"label":  "Men's Interest" , "value": 13, "rank": 0},
+	{"label":  "Entertainment & Pop Culture" , "value": 134, "rank": 1515},
+	{"label":  "Parenting & Families" , "value": 17, "rank": 4220},
+	{"label":  "Crafts & Hobbies" , "value": 70, "rank": 937},
+	{"label":  "Newspapers" , "value": 8, "rank": 2527},
+	{"label":  "Spanish-Language" , "value": 2, "rank": 1179},
+	{"label":  "Religion & Spirituality" , "value": 109, "rank": 1874}];
 	
 var	data2 = [
-	{"label":  "Trucks" , "value": 6 },
-	{"label":  "Motorcycles" , "value": 3 },
-	{"label":  "Automotive" , "value": 46 }];
+	{"label":  "Trucks" , "value": 6, "rank": 655},
+	{"label":  "Motorcycles" , "value": 3, "rank": 4074},
+	{"label":  "Automotive" , "value": 46, "rank": 1269}];
 	
 var	data3 = [
-	{"label":  "Large Print" , "value": 1 },
-	{"label":  "Professional & Trade" , "value": 856 }];
+	{"label":  "Large Print" , "value": 1, "rank": 0},
+	{"label":  "Professional & Trade" , "value": 856, "rank": 1533}];
 	
 var	data4 = [
-	{"label":  "Arts" , "value": 195 },
-	{"label":  "Law" , "value": 16 },
-	{"label":  "Engineering" , "value": 58 },
-	{"label":  "Firefighting & Prevention" , "value": 1 },
-	{"label":  "Entertainment & Media" , "value": 45 },
-	{"label":  "Medicine" , "value": 30 },
-	{"label":  "Humanities & Social Sciences" , "value": 279 },
-	{"label":  "Science & Technology" , "value": 74 },
-	{"label":  "Education" , "value": 34 },
-	{"label":  "Transportation" , "value": 91 }];
+	{"label":  "Arts" , "value": 195, "rank": 1226},
+	{"label":  "Law" , "value": 16, "rank": 3185},
+	{"label":  "Engineering" , "value": 58, "rank": 1855},
+	{"label":  "Firefighting & Prevention" , "value": 1, "rank": 3888},
+	{"label":  "Entertainment & Media" , "value": 45, "rank": 1187},
+	{"label":  "Medicine" , "value": 30, "rank": 1479},
+	{"label":  "Humanities & Social Sciences" , "value": 279, "rank": 1798},
+	{"label":  "Science & Technology" , "value": 74, "rank": 843},
+	{"label":  "Education" , "value": 34, "rank": 2505},
+	{"label":  "Transportation" , "value": 91, "rank": 1717}];
 
 var	data5 = [
-	{"label":  "Crafts & Collectibles" , "value": 29 },
-	{"label":  "Performing Arts" , "value": 12 },
-	{"label":  "Architecture" , "value": 35 },
-	{"label":  "Painting" , "value": 9 },
-	{"label":  "Drawing" , "value": 24 },
-	{"label":  "Decorative Arts" , "value": 24 },	
-	{"label":  "Photography" , "value": 45 }];
+	{"label":  "Crafts & Collectibles" , "value": 29, "rank": 893},
+	{"label":  "Performing Arts" , "value": 12, "rank": 1108},
+	{"label":  "Architecture" , "value": 35, "rank": 1516},
+	{"label":  "Painting" , "value": 9, "rank": 1192},
+	{"label":  "Drawing" , "value": 24, "rank": 0},
+	{"label":  "Decorative Arts" , "value": 24, "rank": 1404},	
+	{"label":  "Photography" , "value": 45, "rank": 2249}];
 			
 var	data6 = [
-	{"label":  "Design & Illustration" , "value": 24 }];
+	{"label":  "Design & Illustration" , "value": 24, "rank": 1763}];
 	
 var	data7= [
-	{"label":  "International" , "value": 21 },
-	{"label":  "Government & Policy" , "value": 4 }];
+	{"label":  "International Law & Relations" , "value": 21, "rank": 1523},
+	{"label":  "Government & Policy" , "value": 4, "rank": 1429}];
 
 var	data8= [
-	{"label":  "Music" , "value": 83 }];
+	{"label":  "Music" , "value": 83, "rank": 1447}];
 	
 var	data9= [
-	{"label":  "Alternative & Holistic" , "value": 3 },	
-	{"label":  "Nursing" , "value": 2 }];	
+	{"label":  "Alternative & Holistic" , "value": 3, "rank": 512},	
+	{"label":  "Nursing" , "value": 2, "rank": 1671}];	
 		
 var	data10=[	
-	{"label":  "History" , "value": 112 },	
-	{"label":  "Geography" , "value": 3 },
-	{"label":  "Philosophy" , "value": 2 },	
-	{"label":  "Economics & Economic Theory" , "value": 38 },
-	{"label":  "Linguistics" , "value": 29 },
-	{"label":  "Political Science" , "value": 4 },
-	{"label":  "Military Science" , "value": 21 },
-	{"label":  "Psychology" , "value": 4 },	
-	{"label":  "Sociology" , "value": 8 }];
+	{"label":  "History" , "value": 112, "rank": 1360},	
+	{"label":  "Geography" , "value": 3, "rank": 1006},
+	{"label":  "Philosophy" , "value": 2, "rank": 3320},	
+	{"label":  "Economics & Economic Theory" , "value": 38, "rank": 2135},
+	{"label":  "Linguistics" , "value": 29, "rank": 1578},
+	{"label":  "Political Science" , "value": 4, "rank": 2151},
+	{"label":  "Military Science" , "value": 21, "rank": 1974},
+	{"label":  "Psychology" , "value": 4, "rank": 404},	
+	{"label":  "Sociology" , "value": 8, "rank": 977}];
 	
 var	data11=[	
-	{"label":  "Biological & Natural Sciences" , "value": 38 },
-	{"label":  "Astronomy" , "value": 9 },
-	{"label":  "Computer Science & Mathematics" , "value": 5 },
-	{"label":  "Physics" , "value": 1 },
-	{"label":  "Earth Sciences" , "value": 4 }];
+	{"label":  "Biological & Natural Sciences" , "value": 38, "rank": 1340},
+	{"label":  "Astronomy" , "value": 9, "rank": 790},
+	{"label":  "Computer Science & Mathematics" , "value": 5, "rank": 1746},
+	{"label":  "Physics" , "value": 1, "rank": 1402},
+	{"label":  "Earth Sciences" , "value": 4, "rank": 1663}];
 
 var data12=[
-	{"label":  "History of Education" , "value": 4 },
-	{"label":  "Theory & Practice" , "value": 8 }];
+	{"label":  "History of Education" , "value": 4, "rank": 663},
+	{"label":  "Theory & Practice" , "value": 8, "rank": 2286}];
 	
 var data13=[	
-	{"label":  "Electronics" , "value": 5 },
-	{"label":  "Computers & Internet" , "value": 31 }];
+	{"label":  "Electronics" , "value": 5, "rank": 1715},
+	{"label":  "Computers & Internet" , "value": 31, "rank": 2427}];
 		
 var data14=[
-	{"label":  "Sci-Fi & Mystery" , "value": 58 }];
+	{"label":  "Sci-Fi & Mystery" , "value": 58, "rank": 1035}];
 	
 var data15=[	
-	{"label":  "Science Fiction & Fantasy" , "value": 23 },
-	{"label":  "Literary Magazines & Journals" , "value": 35 }];
+	{"label":  "Science Fiction & Fantasy" , "value": 23, "rank": 753},
+	{"label":  "Literary Magazines & Journals" , "value": 35, "rank": 1220}];
 	
 var data16=[
-	{"label":  "Fantasy" , "value": 10 },
-	{"label":  "Science Fiction" , "value": 10 }];
+	{"label":  "Fantasy" , "value": 10, "rank": 409},
+	{"label":  "Science Fiction" , "value": 10, "rank": 1058}];
 	
 var data17=[
-	{"label":  "History & Nature" , "value": 50 }];
+	{"label":  "History & Nature" , "value": 50, "rank": 1323}];
 		
 var data18=[		
-	{"label":  "Nature & Ecology" , "value": 9 },
-	{"label":  "History" , "value": 32},
-	{"label":  "Mathematics" , "value": 1 },
-	{"label":  "Agricultural Sciences" , "value": 2 },
-	{"label":  "Essays & Commentary" , "value": 6 }];	
+	{"label":  "Nature & Ecology" , "value": 9, "rank": 507},
+	{"label":  "History" , "value": 32, "rank": 1360},
+	{"label":  "Mathematics" , "value": 1, "rank": 1207},
+	{"label":  "Agricultural Sciences" , "value": 2, "rank": 932},
+	{"label":  "Essays & Commentary" , "value": 6, "rank": 0}];	
 	
 var data19=[
-	{"label":  "Fitness & Wellness" , "value": 149 }];
+	{"label":  "Fitness & Wellness" , "value": 149, "rank": 1653}];
 
 var data20=[
-	{"label":  "Nutrition" , "value": 2 },
-	{"label":  "Health" , "value": 33 },
-	{"label":  "Women" , "value": 77 },
-	{"label":  "Men" , "value": 21 }];	
+	{"label":  "Nutrition" , "value": 2, "rank": 0},
+	{"label":  "Health" , "value": 33, "rank": 0},
+	{"label":  "Women" , "value": 77, "rank": 0},
+	{"label":  "Men" , "value": 21, "rank": 1653}];	
 		
 var data21=[
-	{"label":  "City & Regional" , "value": 281 }];
+	{"label":  "City & Regional" , "value": 281, "rank": 903}];
 	
 var data22=[
-	{"label":  "Others" , "value": 37 },
-	{"label":  "United States" , "value": 244 }];
+	{"label":  "Others" , "value": 37, "rank": 2281},
+	{"label":  "United States" , "value": 244, "rank": 694}];
 
 var data23=[
-	{"label":  "Northeast" , "value": 47 },
-	{"label":  "West" , "value": 62 },
-	{"label":  "South" , "value": 87 },
-	{"label":  "Midwest" , "value": 36 }];
+	{"label":  "Northeast" , "value": 47, "rank": 1217},
+	{"label":  "West" , "value": 62, "rank": 1135},
+	{"label":  "South" , "value": 87, "rank": 1200},
+	{"label":  "Midwest" , "value": 36, "rank": 904}];
 	
 var data24=[
-	{"label":  "Ideas & Commentary" , "value": 25 },
-	{"label":  "Regional" , "value": 6 }];
+	{"label":  "Ideas & Commentary" , "value": 25, "rank": 1201},
+	{"label":  "Regional" , "value": 6, "rank": 2050}];
 	
 var data25=[
-	{"label":  "Teen" , "value": 8 },
-	{"label":  "Children" , "value": 86 }];
+	{"label":  "Teen" , "value": 8, "rank": 442},
+	{"label":  "Children" , "value": 86, "rank": 0}];
 	
 var data26=[
-	{"label":  "Animals" , "value": 1 },
-	{"label":  "Girls" , "value": 3 },
-	{"label":  "Sports & Activities" , "value": 3 },
-	{"label":  "By Age" , "value": 75 },
-	{"label":  "Educational" , "value": 3 }];
+	{"label":  "Animals" , "value": 1, "rank": 166},
+	{"label":  "Girls" , "value": 3, "rank": 431},
+	{"label":  "Sports & Activities" , "value": 3, "rank": 1817},
+	{"label":  "By Age" , "value": 75, "rank": 0},
+	{"label":  "Educational" , "value": 3, "rank": 1644}];
 	
 var data27=[
-	{"label":  "Baby-3" , "value": 4 },
-	{"label":  "Ages 4-8" , "value": 15 },
-	{"label":  "Ages 9-12" , "value": 51 },
-	{"label":  "12 & Up" , "value": 5 }];
+	{"label":  "Baby-3" , "value": 4, "rank": 45},
+	{"label":  "Ages 4-8" , "value": 15, "rank": 753},
+	{"label":  "Ages 9-12" , "value": 51, "rank": 1375},
+	{"label":  "12 & Up" , "value": 5, "rank": 2409}];
 
 
 var data28=[
-	{"label":  "Music & Photography" , "value": 195 }];
+	{"label":  "Music & Photography" , "value": 195, "rank": 0}];
 	
 var data29=[
-	{"label":  "Architecture" , "value": 31 },
-	{"label":  "Music" , "value": 83 },
-	{"label":  "Photography" , "value": 39 },
-	{"label":  "Art & Art History" , "value": 12 },
-	{"label":  "Graphic Design" , "value": 4 }];
+	{"label":  "Architecture" , "value": 31, "rank": 1516},
+	{"label":  "Music" , "value": 83, "rank": 1447},
+	{"label":  "Photography" , "value": 39, "rank": 2249},
+	{"label":  "Art & Art History" , "value": 12, "rank": 1099},
+	{"label":  "Graphic Design" , "value": 4, "rank": 1333}];
 	
 var data30=[
-	{"label":  "Hinduism" , "value": 2 },
-	{"label":  "Occult" , "value": 2 },
-	{"label":  "Christianity" , "value": 31 },
-	{"label":  "Other Eastern Religions" , "value": 2 },
-	{"label":  "Judaism" , "value": 2 },
-	{"label":  "Buddhism" , "value": 3 }];
+	{"label":  "Hinduism" , "value": 2, "rank": 1852},
+	{"label":  "Occult" , "value": 2, "rank": 4287},
+	{"label":  "Christianity" , "value": 31, "rank": 1216},
+	{"label":  "Other Eastern Religions" , "value": 2, "rank": 1494},
+	{"label":  "Judaism" , "value": 2, "rank": 725},
+	{"label":  "Buddhism" , "value": 3, "rank": 939}];
 	
 var data31=[
-	{"label":  "Banking" , "value": 2 },
-	{"label":  "International" , "value": 21 },
-	{"label":  "Business Management" , "value": 9 },
-	{"label":  "Advertising" , "value": 7 },
-	{"label":  "Careers" , "value": 1 },
-	{"label":  "Entrepreneurship" , "value": 12 },
-	{"label":  "Business Life" , "value": 3 },
-	{"label":  "Investing" , "value": 4 },
-	{"label":  "Finance" , "value": 14 }];	
+	{"label":  "Banking" , "value": 2, "rank": 1201},
+	{"label":  "International" , "value": 21, "rank": 0},
+	{"label":  "Business Management" , "value": 9, "rank": 2139},
+	{"label":  "Advertising" , "value": 7, "rank": 2104},
+	{"label":  "Careers" , "value": 1, "rank": 2023},
+	{"label":  "Entrepreneurship" , "value": 12, "rank": 488},
+	{"label":  "Business Life" , "value": 3, "rank": 1648},
+	{"label":  "Investing" , "value": 4, "rank": 1152},
+	{"label":  "Finance" , "value": 14, "rank": 2436}];	
 
 var data32=[
-	{"label":  "Model Trains" , "value": 7 },
-	{"label":  "Quilts & Quilting" , "value": 12 },
-	{"label":  "Knitting" , "value": 9 },	
-	{"label":  "Woodworking" , "value": 13 },
-	{"label":  "Remote Control Vehicles" , "value": 7 },
-	{"label":  "Models" , "value": 3 },
-	{"label":  "Pottery & Ceramics" , "value": 2 },
-	{"label":  "Needlecrafts" , "value": 8 }];
+	{"label":  "Model Trains" , "value": 7, "rank": 619},
+	{"label":  "Quilts & Quilting" , "value": 12, "rank": 986},
+	{"label":  "Knitting" , "value": 9, "rank": 794},	
+	{"label":  "Woodworking" , "value": 13, "rank": 498},
+	{"label":  "Remote Control Vehicles" , "value": 7, "rank": 0},
+	{"label":  "Models" , "value": 3, "rank": 1677},
+	{"label":  "Pottery & Ceramics" , "value": 2, "rank": 0},
+	{"label":  "Needlecrafts" , "value": 8, "rank": 1030}];
 
 var data33=[		
-	{"label":  "Food & Wine" , "value": 98 }];
+	{"label":  "Food & Wine" , "value": 98, "rank": 1088}];
 
 var data34=[
-	{"label":  "Recipes & Techniques" , "value": 38 },
-	{"label":  "Special Diet" , "value": 17 },
-	{"label":  "Reference" , "value": 5 },
-	{"label":  "Wine & Cocktails" , "value": 14 }];
+	{"label":  "Recipes & Techniques" , "value": 38, "rank": 1001},
+	{"label":  "Special Diet" , "value": 17, "rank": 1568},
+	{"label":  "Reference" , "value": 5, "rank": 1817},
+	{"label":  "Wine & Cocktails" , "value": 14, "rank": 847}];
 
 
 var data35=[
-	{"label":  "Others" , "value": 68 },
-	{"label":  "Gay & Lesbian" , "value": 4 }];
+	{"label":  "Others" , "value": 68, "rank": 0},
+	{"label":  "Gay & Lesbian" , "value": 4, "rank": 1085}];
 	
 var data36=[
-	{"label":  "Beauty" , "value": 12 },
-	{"label":  "International" , "value": 21 },
-	{"label":  "Women" , "value": 77 },
-	{"label":  "Men" , "value": 21 }];	
+	{"label":  "Beauty" , "value": 12, "rank": 2287},
+	{"label":  "International" , "value": 21, "rank": 0},
+	{"label":  "Women" , "value": 77, "rank": 2104},
+	{"label":  "Men" , "value": 21, "rank": 0}];	
 	
 var data37=[
-	{"label":  "Recreation & Outdoors" , "value": 355 }];
+	{"label":  "Recreation & Outdoors" , "value": 355, "rank": 1202}];
 	
 var data38=[
-	{"label":  "Sports & Leisure" , "value": 344 },
-	{"label":  "Outdoors & Nature" , "value": 7 }];
+	{"label":  "Sports & Leisure" , "value": 344, "rank": 1198},
+	{"label":  "Outdoors & Nature" , "value": 7, "rank": 1405}];
 	
 var data39=[
-	{"label":  "Hunting & Firearms" , "value": 66 },
-	{"label":  "Hiking & Camping" , "value": 12 },
-	{"label":  "Skiing & Snowboarding" , "value": 15 },
-	{"label":  "Flying" , "value": 28 },
-	{"label":  "Water Sports" , "value": 15 },
-	{"label":  "Extreme Sports" , "value": 22 },
-	{"label":  "Running" , "value": 8 },
-	{"label":  "Baseball" , "value": 7 },
-	{"label":  "Soccer" , "value": 1 },
-	{"label":  "Basketball" , "value": 6 },
-	{"label":  "Football" , "value": 5 },
-	{"label":  "Training" , "value": 24 },
-	{"label":  "Boating" , "value": 32 },
-	{"label":  "Mountaineering" , "value": 2 },
-	{"label":  "Hockey" , "value": 3 },
-	{"label":  "Racket Sports" , "value": 1 },
-	{"label":  "Individual Sports" , "value": 13 },
-	{"label":  "Cycling" , "value": 6 },
-	{"label":  "Equestrian" , "value": 27 },
-	{"label":  "Rodeos" , "value": 1 }];
+	{"label":  "Hunting & Firearms" , "value": 66, "rank": 1046},
+	{"label":  "Hiking & Camping" , "value": 12, "rank": 3022},
+	{"label":  "Skiing & Snowboarding" , "value": 15, "rank": 1211},
+	{"label":  "Flying" , "value": 28, "rank": 1544},
+	{"label":  "Water Sports" , "value": 15, "rank": 2386},
+	{"label":  "Extreme Sports" , "value": 22, "rank": 1289},
+	{"label":  "Running" , "value": 8, "rank": 189},
+	{"label":  "Baseball" , "value": 7, "rank": 1035},
+	{"label":  "Soccer" , "value": 1, "rank": 847},
+	{"label":  "Basketball" , "value": 6, "rank": 994},
+	{"label":  "Football" , "value": 5, "rank": 939},
+	{"label":  "Training" , "value": 24, "rank": 2534},
+	{"label":  "Boating" , "value": 32, "rank": 1054},
+	{"label":  "Mountaineering" , "value": 2, "rank": 835},
+	{"label":  "Hockey" , "value": 3, "rank": 1568},
+	{"label":  "Racket Sports" , "value": 1, "rank": 350},
+	{"label":  "Individual Sports" , "value": 13, "rank": 834},
+	{"label":  "Cycling" , "value": 6, "rank": 1827},
+	{"label":  "Equestrian" , "value": 27, "rank": 984},
+	{"label":  "Golf" , "value": 13, "rank": 976},
+	{"label":  "Rodeos" , "value": 1, "rank": 0}];
 
 var data40=[
-	{"label":  "Log Homes" , "value": 2 },
-	{"label":  "Interior Design" , "value": 2 },
-	{"label":  "Country Life" , "value": 3 },
-	{"label":  "Home Design" , "value": 10 },
-	{"label":  "Antiques & Collectibles" , "value": 31 },	
-	{"label":  "Gardening & Horticulture" , "value": 19 },	
-	{"label":  "Design & Decoration" , "value": 39 },
-	{"label":  "How-to & Home Improvements" , "value": 9 },
-	{"label":  "Farming" , "value": 2 }];
+	{"label":  "Log Homes" , "value": 2, "rank": 1795},
+	{"label":  "Interior Design" , "value": 2, "rank": 430},
+	{"label":  "Country Life" , "value": 3, "rank": 0},
+	{"label":  "Home Design" , "value": 10, "rank": 1280},
+	{"label":  "Antiques & Collectibles" , "value": 31, "rank": 1482},	
+	{"label":  "Gardening & Horticulture" , "value": 19, "rank": 1089},	
+	{"label":  "Design & Decoration" , "value": 39, "rank": 1186},
+	{"label":  "How-to & Home Improvements" , "value": 9, "rank": 323},
+	{"label":  "Farming" , "value": 2, "rank": 142}];
 
 var data41=[
-	{"label":  "Pop Culture" , "value": 12 },
-	{"label":  "Video Games" , "value": 2 },
-	{"label":  "Humor" , "value": 2 },	
-	{"label":  "Movies" , "value": 23 },
-	{"label":  "Television" , "value": 6 },
-	{"label":  "Puzzles & Games" , "value": 27 },
-	{"label":  "Tabloids" , "value": 4 },
-	{"label":  "Celebrities & Gossip" , "value": 17 }];
+	{"label":  "Pop Culture" , "value": 12, "rank": 617},
+	{"label":  "Video Games" , "value": 2, "rank": 0},
+	{"label":  "Humor" , "value": 2, "rank": 896},	
+	{"label":  "Movies" , "value": 23, "rank": 1711},
+	{"label":  "Television" , "value": 6, "rank": 707},
+	{"label":  "Puzzles & Games" , "value": 27, "rank": 1143},
+	{"label":  "Tabloids" , "value": 4, "rank": 2014},
+	{"label":  "Celebrities & Gossip" , "value": 17, "rank": 1204}];
 	
 var data42=[
-	{"label":  "Women's Lifestyle" , "value": 4 },
-	{"label":  "Bridal & Weddings" , "value": 8 },
-	{"label":  "Pregnancy & Childbirth" , "value": 1 },
-	{"label":  "Self-Improvement" , "value": 2 }];
+	{"label":  "Women's Lifestyle" , "value": 4, "rank": 475},
+	{"label":  "Bridal & Weddings" , "value": 8, "rank": 1129},
+	{"label":  "Pregnancy & Childbirth" , "value": 1, "rank": 0},
+	{"label":  "Self-Improvement" , "value": 2, "rank": 2696}];
 
-var oldData = '.data1';
 
 var data43=[
-	{"label":  "Parenting" , "value": 9 },
-	{"label":  "Education" , "value": 34 }];
+	{"label":  "Parenting" , "value": 9, "rank": 2790},
+	{"label":  "Education" , "value": 34, "rank":  0}];
 
+var oldData = '.data1';
+//==============================================================================
 var margin = {top: 30, right: 20, bottom: 30, left: 20},
     width = 960 - margin.left - margin.right,
     barHeight = 20,
@@ -368,9 +422,10 @@ var svg1 = d3.select("body div.left").append("svg")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 	
 
+//==============================================================================
 var colorScheme = ["#E57373","#BA68C8","#7986CB","#A1887F","#90A4AE","#AED581","#9575CD","#FF8A65","#4DB6AC","#FFF176","#64B5F6","#00E676"];
 	//renderPieChart(data1,"body div.right",colorScheme);
-		
+	
 var margin2 = {top:50,bottom:50,left:50,right:50};
 var width2 = 350 - margin2.left - margin2.right,
 height = width2,
@@ -379,9 +434,9 @@ var donutWidth = 75;
 var legendRectSize = 18;
 var legendSpacing = 4;
 
-data1.forEach(function(item){
-	item.enabled = true;
-});
+data1.sort(function(a, b) {
+        return a.value - b.value;
+	});
 
 var color2 = d3.scale.ordinal()
 	.range(colorScheme);
@@ -427,7 +482,7 @@ var path = svg.selectAll('path')
 
 path.on('mouseover', function(d) {
 	var total = d3.sum(data1.map(function(d) {
-		return (d.enabled) ? d.value : 0;
+		return d.value;
 	}));
 
 var percent = Math.round(1000 * d.data.value / total) / 10;
@@ -450,7 +505,128 @@ path.on('mouseout', function() {
 	tooltip.style('display', 'none');
 	tooltip.style('opacity',0);
 });
+//====================================================================
 
+var dataset = data4
+
+// set the dimensions of the canvas
+var margin3 = {top: 70, right: 20, bottom: 70, left: 40},
+    width3 = 600 - margin3.left - margin3.right,
+    height3 = 400 - margin3.top - margin3.bottom;
+
+/*
+// append the svg object to the body of the page
+var svg = d3.select("body div.last")
+  .append("svg")
+    .attr("width", width3 + margin3.left + margin3.right)
+    .attr("height", height3 + margin3.top + margin3.bottom)
+  .append("g")
+    .attr("transform",
+          "translate(" + margin3.left + "," + margin3.top + ")");
+
+// Initialize the X axis
+var x = d3.scaleBand()
+  .range([ 0, width3 ])
+  .padding(0.2);
+var xAxis = svg.append("g")
+  .attr("transform", "translate(0," + height3 + ")")
+
+// Initialize the Y axis
+var y = d3.scaleLinear()
+  .range([ height3, 0]);
+var yAxis = svg.append("g")
+  .attr("class", "myYaxis")
+  
+test(data1)
+*/
+
+// set the ranges
+var x = d3.scale.ordinal().rangeRoundBands([0, width3], .05);
+
+var y = d3.scale.linear().range([height3, 0]);
+
+
+// define the axis
+var xAxis = d3.svg.axis()
+    .scale(x)
+    .orient("bottom")
+
+
+var yAxis = d3.svg.axis()
+    .scale(y)
+    .orient("left")
+    .ticks(10);
+
+var tip = d3.tip()
+  .attr('class', 'd3-tip')
+  .offset([-10, 0])
+  .html(function(d) {
+    return "<strong>rank:</strong> <span style='color:red'>" + d.rank + "</span>";
+  })
+  
+// add the SVG element
+var svg3 = d3.select("body div.last").append("svg")
+    .attr("width", width3 + margin3.left + margin3.right)
+    .attr("height", height3 + margin3.top + margin3.bottom)
+  .append("g")
+    .attr("transform", 
+          "translate(" + margin3.left + "," + margin3.top + ")");
+
+svg3.call(tip);
+
+// load the data
+
+    //data.forEach(function(d) {
+    //    d.Letter = d.Letter;
+     //   d.Freq = +d.Freq;
+    //});
+	dataset.sort(function(a, b) {
+        return a.rank - b.rank;
+      });
+	
+  // scale the range of the data
+  x.domain(dataset.map(function(d) { return d.label; }));
+  y.domain([0, d3.max(data1, function(d) { return d.rank;})]);
+
+
+  
+  // add axis
+  svg3.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height3 + ")")
+      .call(xAxis)
+    .selectAll("text")
+      .style("text-anchor", "end")
+      .attr("dx", "-0.8em")
+      .attr("dy", "-.55em")
+      .attr("transform", "rotate(-90)" );
+
+  svg3.append("g")
+      .attr("class", "y axis")
+      .call(yAxis)
+    .append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", ".71em")
+      .style("text-anchor", "end")
+      .text("avg rank");
+
+
+  // Add bar chart
+  svg3.selectAll("bar")
+      .data(dataset)
+	  .enter().append("rect")
+      .attr("class", "bar")
+      .attr("x", function(d) { return x(d.label); })
+      .attr("width", x.rangeBand())
+      .attr("y", function(d) { return y(d.rank); })
+      .attr("height", function(d) { return height3 - y(d.rank); })
+      .on('mouseover', tip.show)
+      .on('mouseout', tip.hide);
+
+
+
+//====================================================================
 d3.json("data.json", function(error, d) {
   d.x0 = 0;
   d.y0 = 0;
@@ -458,6 +634,10 @@ d3.json("data.json", function(error, d) {
   collapseAll(root = d);
 });
 
+function mouseover(d) {
+  div.style("display", "inline");
+  div.text(d.Stage)
+}
 
 function update(source) {
 
@@ -584,10 +764,12 @@ function click(d) {
   switch (d.name) {
   case "Magazine Subscriptions":
     change(data1);
+	//renew(data1);
 	oldData = '.data1'
     break;
   case "Automotive & Motorcycles":
     change(data2);
+	//renew(data2);
 	oldData = '.data2'
     break;
   case "Professional & Educational Journals":
@@ -783,6 +965,10 @@ function change(data){
 
 //selectAll('.oldData').data(newData)，該進入 update 狀態的資料就會取代掉舊的，接著再呼叫 selectAll().exit().remove() 移除掉其他不再 newData 內的資料，最後呼叫 selectAll().enter().append() 
 
+data.sort(function(a, b) {
+        return a.value - b.value;
+      });
+
 path = svg.selectAll(oldData)
 	.data(pie(data))
 	.enter()
@@ -821,7 +1007,89 @@ path.on('mouseout', function() {
 });
 
 };
-	
+
+function renew(data){
+	  
+   data.sort(function(a, b) {
+        return a.value - b.value;
+      });
+	  
+  svg3.selectAll(".bar").remove().exit();
+	  
+  // scale the range of the data
+  x.domain(data.map(function(d) { return d.label; }));
+  y.domain([0, d3.max(data, function(d) { return d.rank;})]);
+  
+  
+  // add axis
+  svg3.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height3 + ")")
+      .call(xAxis)
+    .selectAll("text")
+      .style("text-anchor", "end")
+      .attr("dx", "-0.8em")
+      .attr("dy", "-.55em")
+      .attr("transform", "rotate(-90)" );
+
+  svg3.append("g")
+      .attr("class", "y axis")
+      .call(yAxis)
+    .append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", ".71em")
+      .style("text-anchor", "end")
+      .text("avg rank");
+
+	  
+  // Add bar chart
+  svg3.selectAll(".data1")
+      .data(data)
+	  .enter().append("rect")
+      .attr("class", "bar")
+      .attr("x", function(d) { return x(d.label); })
+      .attr("width", x.rangeBand())
+      .attr("y", function(d) { return y(d.rank); })
+      .attr("height", function(d) { return height3 - y(d.rank); })
+	  .on('mouseover', tip.show)
+      .on('mouseout', tip.hide);
+};
+
+// A function that create / update the plot for a given variable:
+function test(data) {
+
+  // Update the X axis
+  x.domain(data.map(function(d) { return d.label; }))
+  xAxis.call(d3.axisBottom(x))
+
+  // Update the Y axis
+  y.domain([0, d3.max(data, function(d) { return d.value }) ]);
+  yAxis.transition().duration(1000).call(d3.axisLeft(y));
+
+  // Create the u variable
+  var u = svg.selectAll("rect")
+    .data(data)
+
+  u
+    .enter()
+    .append("rect") // Add a new rect for each new elements
+    .merge(u) // get the already existing elements as well
+    .transition() // and apply changes to all of them
+    .duration(1000)
+      .attr("x", function(d) { return x(d.label); })
+      .attr("y", function(d) { return y(d.value); })
+      .attr("width", x.bandwidth())
+      .attr("height", function(d) { return height3 - y(d.value); })
+      .attr("fill", "#69b3a2")
+
+  // If less group in the new dataset, I delete the ones not in use anymore
+  u
+    .exit()
+    .remove()
+};
+
+
     </script>
   </body>
 
